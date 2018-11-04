@@ -6,12 +6,17 @@
 The aim of this project is learning how to use PID controller to control a vehicle.
 
 ### Algorithm of PID
+d_error is the differential of error
+i_error is the integral of error
+p_error is the the current error
+therefore,
 
-  d_error = cte - prev_cte;
-  prev_cte = cte;
-  i_error += cte;
-  p_error = cte;
-
+    d_error = cte - prev_cte;
+    prev_cte = cte;
+    i_error += cte;
+    p_error = cte;
+    sterr_value = -Kp*p_error - Ki * i_error - Kd * d_error
+    
 ### Effect of each term
 P term: A greater proportional gain results in an unstable system. In contrast, a small gain results in a small control action. 
 
